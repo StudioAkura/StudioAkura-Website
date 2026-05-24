@@ -103,7 +103,10 @@ export const metadata: Metadata = {
     canonical:
       "https://akurainteractive.vercel.app",
   },
-
+  verification: {
+    google:
+      "P2cqQZg85Wv4RfuMymXv7uYHZb0MpYyJ1fFLTIxSTRg",
+  },
 };
 
 export default function RootLayout({
