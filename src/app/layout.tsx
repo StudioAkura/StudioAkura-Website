@@ -3,7 +3,6 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
 
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://akurainteractive.vercel.app"),
