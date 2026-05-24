@@ -1,0 +1,51 @@
+@import "tailwindcss";
+@reference "tailwindcss";
+
+/* ---------------- BASE VARIABLES ---------------- */
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+  }
+}
+
+/* ---------------- GLOBAL STYLES ---------------- */
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-100;
+    min-height: 100vh;
+    font-family: system-ui, sans-serif;
+  }
+}
+
+/* ---------------- SCROLLBAR ---------------- */
+@layer base {
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #09090b;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+  }
+}
+
+/* ---------------- UTILITIES ---------------- */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
