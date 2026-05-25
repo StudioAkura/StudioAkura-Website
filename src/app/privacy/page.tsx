@@ -289,7 +289,7 @@ font-semibold
 "
                             >
 
-                                studioakura@protonmail.com
+                                akurainteractive@gmail.com
 
                             </p>
 
