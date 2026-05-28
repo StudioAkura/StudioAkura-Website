@@ -3,6 +3,7 @@
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 const projects = [
   {
@@ -10,6 +11,7 @@ const projects = [
     subtitle: "Arcade Endless Runner",
     description:
       "Dash through obstacles and survive as long as possible in a fast-paced 3D reflex challenge.",
+    pageLink: "/games/flaprush3d",
     image:
       "https://res.cloudinary.com/danpdjryt/image/upload/v1779463477/2026-05-08T22-37-30_cyalf1.png",
   },
@@ -18,17 +20,26 @@ const projects = [
     subtitle: "Night Shift Simulator (in development)",
     description:
       "Work late shifts inside a neon city while strange events slowly unfold around you.",
+    pageLink: "",
     image:
       "https://res.cloudinary.com/danpdjryt/image/upload/v1779513961/oTUlF1TQnNUhpNVZLdQngazUfcPs69cWGorWve1FFX6_WSu-mAPAZIr6d-huk-fPBlSkqY_fiVljIEbNMt--3_XvbAog1pDSikFWtKV8nvgHu_ruTlF4byFpf3AUR-xxxTRaf7iRHtk1iygREXoKWMJzUY2q9i6lai4i8ACvzd5FtwXFD3lHdXPEuyySUrbL_toalyr.jpg",
   },
   {
     title: "Future Project",
     subtitle: "Coming Soon",
-    description:
-      "More worlds are being crafted inside Akura Interactive.",
+    description: "More worlds are being crafted inside Akura Interactive.",
+    pageLink: "",
     image:
       "https://res.cloudinary.com/danpdjryt/image/upload/v1779514392/ChatGPT_Image_May_23_2026_11_02_38_AM_jrjqbm.png",
   },
+];
+
+const mediaData = [
+  "https://res.cloudinary.com/danpdjryt/image/upload/v1779808108/screen-shot-one-orange-env-bird-flap_wg45xg.jpg",
+
+  "https://res.cloudinary.com/danpdjryt/video/upload/v1779808486/Game-Trailer_jum7z5.mp4",
+
+  "https://res.cloudinary.com/danpdjryt/image/upload/v1779808118/screen-shot-MIX-env-bird-flap_ene9fs.jpg",
 ];
 
 export const FeaturedProject = () => {
@@ -41,24 +52,12 @@ export const FeaturedProject = () => {
     offset: ["start end", "end start"],
   });
 
-  const y = useTransform(
-    scrollYProgress,
-    [0, 1],
-    ["-5%", "5%"]
-  );
+  const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
-  const opacity = useTransform(
-    scrollYProgress,
-    [0, 0.2, 0.8, 1],
-    [0, 1, 1, 0]
-  );
+  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
 
   const nextProject = () => {
-    setCurrentProject((prev) =>
-      prev === projects.length - 1
-        ? 0
-        : prev + 1
-    );
+    setCurrentProject((prev) => (prev === projects.length - 1 ? 0 : prev + 1));
   };
 
   const project = projects[currentProject];
@@ -70,28 +69,17 @@ export const FeaturedProject = () => {
       className="py-32 bg-zinc-950 relative overflow-hidden"
     >
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-
         {/* Header */}
 
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-
           <div>
-
             <span className="text-[#7F1D1D] font-bold tracking-[0.2em] uppercase text-xs mb-4 block">
               Featured Title
             </span>
 
             <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter">
-
-              Project:
-              {" "}
-
-              <span className="text-zinc-500">
-                {project.title}
-              </span>
-
+              Project: <span className="text-zinc-500">{project.title}</span>
             </h2>
-
           </div>
 
           <Button
@@ -101,7 +89,6 @@ export const FeaturedProject = () => {
           >
             Next Project
           </Button>
-
         </div>
 
         {/* Card */}
@@ -126,7 +113,6 @@ export const FeaturedProject = () => {
           duration-500
           "
         >
-
           {/* Image */}
 
           <motion.div
@@ -186,7 +172,6 @@ export const FeaturedProject = () => {
             md:p-16
             "
           >
-
             <h3
               className="
               text-3xl
@@ -222,27 +207,31 @@ export const FeaturedProject = () => {
 
             <div
               className="
-              flex
-              gap-4
-              opacity-0
-              group-hover:opacity-100
-              translate-y-4
-              group-hover:translate-y-0
-              transition-all
-              duration-500
-              "
+flex
+gap-3
+opacity-0
+group-hover:opacity-100
+translate-y-4
+group-hover:translate-y-0
+transition-all
+duration-500
+"
             >
+              {project.pageLink && (
+                <Link href={project.pageLink}>
+                  <Button>View Page</Button>
+                </Link>
+              )}
 
-              <Button onClick={nextProject}>
+              <Button
+                variant={project.pageLink ? "ghost" : "primary"}
+                onClick={nextProject}
+              >
                 Next Project
               </Button>
-
             </div>
-
           </div>
-
         </motion.div>
-
       </div>
     </section>
   );

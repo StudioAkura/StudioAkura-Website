@@ -5,6 +5,7 @@ import { Stats } from '@/components/home/Stats';
 import { NewsSection } from '@/components/home/NewsSection';
 import { Analytics } from "@vercel/analytics/next"
 
+
 export default function Home() {
   return (
     <main className="bg-zinc-950 min-h-screen">

@@ -35,7 +35,7 @@ export default function CareersPage() {
   return (
     <main className="bg-zinc-950 pt-32 pb-24 min-h-screen">
 
-      <div className="container mx-auto px-6 lg:px-12 max-w-5xl">
+      <div className="w-full max-w-4xl mx-auto px-6 lg:px-12">
 
         {/* Hero */}
 

@@ -1,8 +1,7 @@
-import { Metadata } from 'next';
-import { Navbar } from '@/components/layout/Navbar';
-import { Footer } from '@/components/layout/Footer';
-import './globals.css';
-
+import { Metadata } from "next";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
+import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://akurainteractive.vercel.app"),
@@ -47,18 +46,14 @@ export const metadata: Metadata = {
   },
 
   openGraph: {
-
-    title:
-      "Akura Interactive | Building Interactive Experiences",
+    title: "Akura Interactive | Building Interactive Experiences",
 
     description:
       "Independent game studio creating immersive worlds and original interactive experiences.",
 
-    url:
-      "https://akurainteractive.vercel.app",
+    url: "https://akurainteractive.vercel.app",
 
-    siteName:
-      "Akura Interactive",
+    siteName: "Akura Interactive",
 
     images: [
       {
@@ -75,22 +70,16 @@ export const metadata: Metadata = {
   },
 
   twitter: {
-
     card: "summary_large_image",
 
-    title:
-      "Akura Interactive",
+    title: "Akura Interactive",
 
-    description:
-      "Independent game studio building immersive experiences.",
+    description: "Independent game studio building immersive experiences.",
 
-    images: [
-      "/logo.svg",
-    ],
+    images: ["/logo.svg"],
   },
 
   icons: {
-
     icon: "/logo.svg",
 
     shortcut: "/logo.svg",
@@ -99,13 +88,10 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-
-    canonical:
-      "https://akurainteractive.vercel.app",
+    canonical: "https://akurainteractive.vercel.app",
   },
   verification: {
-    google:
-      "P2cqQZg85Wv4RfuMymXv7uYHZb0MpYyJ1fFLTIxSTRg",
+    google: "P2cqQZg85Wv4RfuMymXv7uYHZb0MpYyJ1fFLTIxSTRg",
   },
 };
 

@@ -9,7 +9,7 @@ export default function PrivacyPage() {
 
         <main className="bg-zinc-950 min-h-screen pt-32 pb-24">
 
-            <div className="container mx-auto px-6 lg:px-12 max-w-5xl">
+            <div className="w-full max-w-4xl mx-auto px-6 lg:px-12">
 
                 {/* Hero */}
 
